@@ -5,8 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class DataLevelObjects : ScriptableObject
 {
-    public int spawnObject;
-    public float timeSpawn;
+    public int spawnObject;    
     public int cantObjectSpawn;
+
+    public float timeSpawn;
 
 }

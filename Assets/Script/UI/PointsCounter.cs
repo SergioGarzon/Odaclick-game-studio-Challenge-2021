@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class PointsCounter : MonoBehaviour
 {
-    public Text txtPointer;
+    public Text txtPointer;    
+    public Text txtCantObject;
+
     public ScorePlayer score;
 
     void Start()
@@ -17,5 +19,12 @@ public class PointsCounter : MonoBehaviour
     {
         txtPointer.text = score.score.ToString();
     }
+
+    public void UpdateCantObjectSpawn(int count)
+    {
+        txtCantObject.text = count.ToString();
+    }
+
+
 
 }

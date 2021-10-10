@@ -12,11 +12,11 @@ public class TimerGamePlay : MonoBehaviour
     private int second;
 
     [SerializeField]
-    private Text txtTimeData;
-
-    private int min, sec;
+    private Text txtTimeData;    
 
     private GameController gameController;
+
+    private int min, sec;
 
 
     private void Start()

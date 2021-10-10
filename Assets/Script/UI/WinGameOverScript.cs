@@ -7,9 +7,7 @@ public class WinGameOverScript : MonoBehaviour
 {
     public Sprite imgWinGame;
     public Sprite imgGameOver;
-
     public Image imgGameFinal;
-
     public ScorePlayer playerLifeGame;
 
     public void EndGame()

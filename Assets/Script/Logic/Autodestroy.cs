@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Autodestroy : MonoBehaviour
 {
-    public ScorePlayer scorePlayerScript;    
+    public ScorePlayer scorePlayerScript; 
+    
     private PointsCounter pointsCounter;    
     private GameController gameController;
 
@@ -13,7 +14,7 @@ public class Autodestroy : MonoBehaviour
     {
         pointsCounter = GameObject.Find("ObjectManager").GetComponent<PointsCounter>();
         gameController = GameObject.Find("ObjectManager").GetComponent<GameController>();
-        //No me lo esta cargando, verificar porque
+        //No me lo esta cargando, acordarse de verificar porque
         //scorePlayerScript = Resources.Load<ScorePlayer>("Script/Logic/ScorePlayer");
         
         StartCoroutine(QuitObjectScene());

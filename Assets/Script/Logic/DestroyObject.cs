@@ -5,10 +5,12 @@ using UnityEngine;
 public class DestroyObject : MonoBehaviour
 {
     public ScorePlayer scorePlayerScript;
-    private int contador;
+        
     private PointsCounter pointsCounter;
     private SpawnObject spawnObject;
     private GameController gameController;
+
+    private int contador;
 
     void Start()
     {
@@ -22,12 +24,10 @@ public class DestroyObject : MonoBehaviour
     void Update()
     {       
         
-            if(scorePlayerScript.score >= 0 && scorePlayerScript.score <= 100 && gameController.getControlData())
+            if(scorePlayerScript.score >= 0 && scorePlayerScript.score < 100 && gameController.getControlData())
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    Debug.Log("Presionaste el boton");
-
                     Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
                         Input.mousePosition.y, 100f));
 
@@ -75,12 +75,9 @@ public class DestroyObject : MonoBehaviour
                 gameController.disabledPanel();
             }
            
-            
-        
-
-    
     
     }
+
 
 
 
