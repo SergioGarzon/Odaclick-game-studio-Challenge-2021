@@ -6,7 +6,7 @@ using UnityEngine;
 public class DataLevelObjects : ScriptableObject
 {
     public int spawnObject;
-    public int timeSpawn;
+    public float timeSpawn;
     public int cantObjectSpawn;
 
 }

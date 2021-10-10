@@ -8,6 +8,7 @@ public class SpawnObject : MonoBehaviour
     public GameObject[] objectToSpawn;
     public ScorePlayer score;
     private GameController gameController;
+    private int countCreateSpawn;
     public DataLevelObjects dataLevel;
 
     private bool control;
@@ -16,6 +17,7 @@ public class SpawnObject : MonoBehaviour
     {
         gameController = GameObject.Find("ObjectManager").GetComponent<GameController>();
         delay = dataLevel.timeSpawn;
+        countCreateSpawn = 0;
         control = true;
         StartCoroutine(WaitToSpawn());
     }
@@ -28,12 +30,13 @@ public class SpawnObject : MonoBehaviour
 
     void Spawn()
     {
-        if (control && score.score <= 100 && score.score >= 0 && gameController.getControlData())
+        if (control && score.score <= 100 && score.score >= 0 && gameController.getControlData() && countCreateSpawn < dataLevel.spawnObject)
         {
             Instantiate(objectToSpawn[Random.Range(0, dataLevel.cantObjectSpawn)],
             transform.position + new Vector3(0, Random.Range(0, 10), Random.Range(0, 10)), transform.rotation);
 
 
+            countCreateSpawn++;
             StartCoroutine(WaitToSpawn());
         }        
     }
@@ -43,12 +46,13 @@ public class SpawnObject : MonoBehaviour
     {
         int counter = 0;
 
-        while(counter != 5)
+        while(counter != 5 && countCreateSpawn < dataLevel.spawnObject)
         {
             Instantiate(objectToSpawn[0],
             transform.position + new Vector3(0, Random.Range(0, 10), Random.Range(0, 10)), transform.rotation);
 
             counter++;
+            countCreateSpawn++;            
         }
         
     }
